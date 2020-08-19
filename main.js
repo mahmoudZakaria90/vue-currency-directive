@@ -1,5 +1,6 @@
 export default {
   bind(el, binding, vnode) {
+    const targetEl = el.tagName.toLowerCase() !== 'input' ? el.querySelector('input') : el;
     const character_pattern = new RegExp(/\D+/, "g");
     const currencyCB = target => {
       if (character_pattern.test(target.value)) {
@@ -18,15 +19,15 @@ export default {
       
     }
 
-    el.value = currencyCB(binding);
-    el.addEventListener("blur", e => (e.target.value = currencyCB(e.target)));
-    el.addEventListener(
+    targetEl.value = currencyCB(binding);
+    targetEl.addEventListener("blur", e => (e.target.value = currencyCB(e.target)));
+    targetEl.addEventListener(
       "focus",
       e =>
         (e.target.value =
           e.target.value && Number(e.target.value.replace(/[^\d.]/g, "")))
     );
-    el.addEventListener("input", e => {
+    targetEl.addEventListener("input", e => {
       if (character_pattern.test(e.target.value)) {
         e.target.value = e.target.value.replace(character_pattern, "");
       }
