@@ -1,0 +1,16 @@
+{
+  "name": "vue-currency-directive",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.7.0",
+    "eslint-plugin-vue": "^6.2.2"
+  }
+}
