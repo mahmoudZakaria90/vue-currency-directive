@@ -5,12 +5,13 @@ export default {
       if (character_pattern.test(target.value)) {
         target.value = target.value.replace(character_pattern, '');
       }
-      const splitted = binding.arg && binding.arg.split('[');
-      const [currency, locale] = splitted;
-      const finalLocale = locale.replace(']', '');
+    
+      const currency = binding.arg && binding.arg.split('[')[0];
+      let locale = binding.arg && binding.arg.split('[')[1];
+      locale = locale && locale.replace(']', '')
       
       return target.value &&
-      Number(target.value).toLocaleString(finalLocale || navigator.language, {
+      Number(target.value).toLocaleString(locale || navigator.language, {
         style: "currency",
         currency: currency || 'USD'
       });
