@@ -23,7 +23,8 @@ Register in your `data()` 2 main state inputs  one for the original value e.g. `
 
 <script>
 ...
-data(){
+export default {
+  data(){
     return {
       amount: '', // naming is not strict 'amount, value, ...etc'
       amountFormatted: '' // is prefixed by binding.expression,
@@ -35,11 +36,13 @@ data(){
       barFormatted: ''
     }
   }
+}
 ...
 <script>
 ```
 ## Global registration
 ```
+import Vue from 'vue';
 import vueCurrencyDirective from 'vue-currency-directive';
 
 Vue.directive('currency', vueCurrencyDirective);
