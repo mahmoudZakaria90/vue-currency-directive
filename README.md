@@ -68,6 +68,3 @@ Passing with locale argument.
 <input v-currency:EUR[de-DE]="'1232'">
 //Output: 1,232.00 €
 ```
-
-## Upcoming
-- Supporting Arabic numbers.

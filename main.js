@@ -1,7 +1,7 @@
 export default {
   bind(el, binding, vnode) {
     const targetEl = el.tagName.toLowerCase() !== 'input' ? el.querySelector('input[type="text"]') : el;
-    const character_pattern = new RegExp(/[a-zA-z,]/, "g");
+    const character_pattern = new RegExp(/[a-zA-z,\W]/, "g");
     const currencyCB = target => {
       if (character_pattern.test(target.value)) {
         target.value = target.value.replace(character_pattern, '');
@@ -35,7 +35,7 @@ export default {
       if (character_pattern.test(e.target.value)) {
         e.target.value = e.target.value.replace(character_pattern, "");
       }
-      vnode.context.$data[binding.expression] = Number(e.target.value);
+      vnode.context.$data[binding.expression] = Number(e.target.value) === 0 ? '' : Number(e.target.value);
     });
   }
 };
