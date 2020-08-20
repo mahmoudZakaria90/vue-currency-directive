@@ -57,7 +57,7 @@ export default {
   data(){
     return {
       amount: '',
-      formattedValue: ''
+      amountFormatted: ''
     }
   },
   directives: {
