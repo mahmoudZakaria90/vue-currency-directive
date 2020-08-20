@@ -12,7 +12,7 @@ Compatible with Vue 2.x
 
 # Usage
 You mainly get 2 outputs: unformatted/original value and the formatted value.<br />
-Register in your `data()` 2 main state inputs  one for the original value e.g. `amount` and the other for formatted value e.g. `amountFormatted`.<br />
+Register in your `data()` 2 main state inputs  one for the original value e.g. `amount` and the other for formatted value e.g. `amountFormatted`.<br /><br />
 **Note** that the `amountFormatted` is prefixed by `amount` and goes as well the same for any other bounded expressions for example:
 ```
 <template>
