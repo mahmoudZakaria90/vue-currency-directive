@@ -63,8 +63,8 @@ Passing currency argument only.
 //Output: €1,232.00
 ```
 
-Passing with locale argument.  
+Passing with locale argument and different currency.  
 ```
-<input v-currency:EUR[de-DE]="'1232'">
-//Output: 1,232.00 €
+<input v-currency:EGP[ar-EG]="'1232'">
+//Output: ١٬٢٣٢٫٠٠ ج.م.‏ 
 ```
