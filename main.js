@@ -35,7 +35,9 @@ export default {
       if (character_pattern.test(e.target.value)) {
         e.target.value = e.target.value.replace(character_pattern, "");
       }
-      vnode.context.$data[binding.expression] = Number(e.target.value) === 0 ? '' : Number(e.target.value);
+      const unformattedAmount = Number(e.target.value);
+      const finalAmount = unformattedAmount === 0 ? '' : unformattedAmount
+      vnode.context.$data[binding.expression] = finalAmount;
     });
   }
 };
