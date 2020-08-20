@@ -15,7 +15,7 @@ You mainly get 2 outputs: unformatted/original value and the formatted value. Re
 ```
 data(){
     return {
-      amount: '', // naming is not strict 'amount, value, ...etc
+      amount: '', // naming is not strict 'amount, value, ...etc'
       formattedValue: '' // naming is strict, you should follow the same naming convention
     }
   }
