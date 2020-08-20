@@ -11,14 +11,32 @@ Compatible with Vue 2.x
 `npm i vue-currency-directive || yarn add vue-currency-directive`
 
 # Usage
-You mainly get 2 outputs: unformatted/original value and the formatted value. Register 2 main state inputs `amount` and `formattedValue` in your `data()`.
+You mainly get 2 outputs: unformatted/original value and the formatted value.<br />
+Register in your `data()` 2 main state inputs  one for the original value e.g. `amount` and the other for formatted value e.g. `amountFormatted`.<br />
+**Note** that the `amountFormatted` is prefixed by `amount` and goes as well the same for any other bounded expressions for example:
 ```
+<template>
+  <input v-currency="amount">
+  <input v-currency="foo">
+  <input v-currency="bar">
+</template>
+
+<script>
+...
 data(){
     return {
       amount: '', // naming is not strict 'amount, value, ...etc'
-      formattedValue: '' // naming is strict, you should follow the same naming convention
+      amountFormatted: '' // is prefixed by binding.expression,
+
+      foo: '',
+      fooFormatted: '',
+
+      bar: '',
+      barFormatted: ''
     }
   }
+...
+<script>
 ```
 ## Global registration
 ```

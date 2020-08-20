@@ -23,7 +23,7 @@ export default {
     targetEl.value = currencyCB(binding);
     targetEl.addEventListener("blur", e => {
       e.target.value = currencyCB(e.target);
-      vnode.context.$data['formattedValue'] = e.target.value;
+      vnode.context.$data[`${binding.expression}Formatted`] = e.target.value;
     });
     targetEl.addEventListener(
       "focus",
