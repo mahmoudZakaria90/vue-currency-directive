@@ -8,12 +8,18 @@ Compatible with Vue 2.x
 - <a href="#examples">Examples</a>
 
 # Installation
-`npm i vue-currency-directive`  
-Or  
-`yarn add vue-currency-directive`
+`npm i vue-currency-directive || yarn add vue-currency-directive`
 
 # Usage
-
+You mainly get 2 outputs: unformatted/original value and the formatted value. Register 2 main state inputs `amount` and `formattedValue` in your `data()`.
+```
+data(){
+    return {
+      amount: '', // naming is not strict 'amount, value, ...etc
+      formattedValue: '' // naming is strict, you should follow the same naming convention
+    }
+  }
+```
 ## Global registration
 ```
 import vueCurrencyDirective from 'vue-currency-directive';
@@ -29,7 +35,8 @@ export default {
   ...
   data(){
     return {
-      amount: ''
+      amount: '',
+      formattedValue: ''
     }
   },
   directives: {
@@ -41,7 +48,7 @@ export default {
 ```
 
 ## In DOM/Single-file-component
-`<input v-currency:<currency>[<locale>]="amount">`
+`<input v-currency:<currency>[<locale>]="<bindingExpression>">`
 
 ## Examples
 Passing no arguments will reflect to "USD" currency by default and for locale it will use the configured browser language.  
