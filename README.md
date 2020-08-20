@@ -1,5 +1,5 @@
 # Vue-currency-directive
-Simple, quick custom directive for handling currency inside text inputs.
+Simple, quick custom directive for handling currency format inside text inputs.
 
 Compatible with Vue 2.x
 - <a href="#installation">Installation</a>
