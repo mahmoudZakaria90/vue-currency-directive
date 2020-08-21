@@ -7,10 +7,10 @@ module.exports = {
     index: path.resolve(__dirname, "main.js")
   },
   output: {
-    filename: "[name].min.js",
+    filename: "demo.min.js",
     path: path.resolve(__dirname, "./demo/"),
     library: 'vueCurrencyDirective',
-    libraryTarget: 'global'
+
   },
   module: {
     rules: [
@@ -26,5 +26,5 @@ module.exports = {
       }
     ]
   },
-  plugins: [new CleanWebpackPlugin()]
+  // plugins: [new CleanWebpackPlugin()]
 };
