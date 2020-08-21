@@ -9,9 +9,9 @@ export default {
       format: 'es',
     },
     {
-      file: 'dist/index.cjs.min.js',
-      format: 'cjs',
-      exports: 'default'
+      file: 'dist/index.iife.min.js',
+      format: 'iife',
+      name: 'vueCurrencyDirective'
     }
   ],
   plugins: [
