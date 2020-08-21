@@ -8,11 +8,6 @@ export default {
       file: 'dist/index.min.js',
       format: 'es',
     },
-    {
-      file: 'dist/index.iife.min.js',
-      format: 'iife',
-      name: 'vueCurrencyDirective',
-    }
   ],
 
   plugins: [
