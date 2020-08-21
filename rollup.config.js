@@ -11,7 +11,10 @@ export default {
     {
       file: 'dist/index.iife.min.js',
       format: 'iife',
-      name: 'vueCurrencyDirective'
+      name: 'vueCurrencyDirective',
+      globals: {
+        vueCurrencyDirective: 'vueCurrencyDirective'
+      }
     }
   ],
   plugins: [
