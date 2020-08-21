@@ -9,8 +9,8 @@ export default {
       format: 'es',
     },
     {
-      file: 'dist/index.iife.min.js',
-      format: 'iife',
+      file: 'dist/index.umd.min.js',
+      format: 'umd',
       name: 'vueCurrencyDirective'
     }
   ],
