@@ -10,7 +10,7 @@ module.exports = {
     filename: "[name].min.js",
     path: path.resolve(__dirname, "./demo/"),
     library: 'vueCurrencyDirective',
-
+    libraryTarget: 'global'
   },
   module: {
     rules: [
