@@ -17,7 +17,7 @@ export default {
           currency: currency || 'USD'
         });
       }
-      return ''
+      return '';
     }
 
     targetEl.value = currencyCB(binding);
