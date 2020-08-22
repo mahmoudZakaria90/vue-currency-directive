@@ -4,6 +4,7 @@ node_js:
 
 jobs:
   include
+    - if: branch = adding-travis
     - stage: build
       script: yarn build
     - stage: test
