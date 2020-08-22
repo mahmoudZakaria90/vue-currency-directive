@@ -12,11 +12,11 @@ Compatible with Vue 2.x
 `npm i vue-currency-directive || yarn add vue-currency-directive`
 
 # Usage
-- Register in your `data()` 1 main state object e.g. `amount` and inside it 2 main properties `value` and `formatted`.<br />
+- Register in your `data()` a main state object e.g. `amount` and inside it 2 main properties `value` and `formatted`.<br />
 - You mainly get 2 outputs: one for **the unformatted/original** value and the other for **the formatted value**.
 
 ## In DOM/Single-file-component
-`<input v-currency:<currency>[<locale>]="<bindingExpression>">`
+`<input v-currency:<currency?>[<locale?>]="<bindingExpression>">`
 
 For example:
 ```
