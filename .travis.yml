@@ -3,3 +3,5 @@ node_js:
   - "stable"
 script: yarn build
 script: yarn test
+
+cache: yarn

@@ -59,7 +59,7 @@ describe('Test directive', () => {
 
     it('Output with a "EGP" currency and arabic locale when currency:EUR[ar-EG] arg is passed', () => {
         const receivedVal = 554342;
-        const expectedVal = 'EGP 554,342.00';
+        const expectedVal = '.٥٥٤٬٣٤٢٫٠٠ ج.م';
         const Component = {
             template: `<input v-currency:EGP[ar-EG]="amount.value">`,
             directives: {
