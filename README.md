@@ -1,6 +1,11 @@
 # Vue-currency-directive
 Simple, quick custom directive for handling currency format inside text inputs.
 
+[![Build Status](https://travis-ci.com/mahmoudZakaria90/vue-currency-directive.svg?branch=master)](https://travis-ci.com/mahmoudZakaria90/vue-currency-directive)
+[![Version](https://img.shields.io/npm/v/vue-currency-directive.svg)](https://www.npmjs.com/package/vue-currency-directive)
+[![Downloads](https://img.shields.io/npm/dm/vue-currency-directive.svg)](https://npmcharts.com/compare/vue-currency-directive)
+[![License](https://img.shields.io/npm/l/vue-currency-directive.svg?)](https://www.npmjs.com/package/vue-currency-directive)
+
 Compatible with Vue 2.x
 - <a href="https://jsfiddle.net/Zak90/sxd9j3uL/39/" target="_blank">Demo/Playground</a>
 - <a href="#installation">Installation</a>

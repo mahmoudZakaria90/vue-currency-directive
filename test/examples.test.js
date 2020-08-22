@@ -58,8 +58,8 @@ describe('Test directive', () => {
     })
 
     it('Output with a "EUR" currency and french locale when currency:EUR[fr-FR] arg is passed', () => {
-        const amountVal = 43434;
-        const expectedVal = '43 434,00 €';
+        const amountVal = 100234;
+        const expectedVal = '100 234,00 €';
         const Component = {
             template: `<input v-currency:EUR[fr-FR]="amount.value">`,
             directives: {
@@ -81,6 +81,6 @@ describe('Test directive', () => {
         input.trigger('input');
         input.setValue(amountVal);
         input.trigger('blur');
-        expect(String(input.element.value)).toBe(String(expectedVal));
+        expect(input.element.value).toBe(expectedVal);
     })
 })
