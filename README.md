@@ -2,7 +2,7 @@
 Simple, quick custom directive for handling currency format inside text inputs.
 
 Compatible with Vue 2.x
-- <a href="https://jsfiddle.net/Zak90/sxd9j3uL/33/" target="_blank">Demo/Playground</a>
+- <a href="https://jsfiddle.net/Zak90/sxd9j3uL/39/" target="_blank">Demo/Playground</a>
 - <a href="#installation">Installation</a>
 - <a href="#global-registration">Global registration</a>
 - <a href="#local-registration">Local registration</a>
@@ -31,8 +31,8 @@ For example:
 export default {
   data(){
     return {
-      amount: {
-        value: '', // naming is not strict 'amount, foo, bar, ...etc'
+      amount: { // naming is not strict 'amount, foo, bar, ...etc'
+        value: '', 
         formatted: ''
       }, 
 
