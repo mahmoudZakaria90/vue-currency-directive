@@ -81,6 +81,6 @@ describe('Test directive', () => {
         input.trigger('input');
         input.setValue(amountVal);
         input.trigger('blur');
-        expect(input.element.value.toEquals(expectedVal)).toBe(true);
+        expect(String(input.element.value)).toBe(String(expectedVal));
     })
 })
