@@ -27,7 +27,7 @@ describe('Test directive', () => {
         input.trigger('input');
         input.setValue(amountVal);
         input.trigger('blur');
-        expect(input.element.value).toBe(expectedVal);
+        expect(input.element.value.equals(expectedVal)).toBe(true);
     })
 
     it('Output with a "EUR" currency when currency:EUR arg is passed', () => {
