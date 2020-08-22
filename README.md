@@ -32,7 +32,7 @@ export default {
   data(){
     return {
       amount: {
-        value: '', // naming is not strict 'amount, value, ...etc'
+        value: '', // naming is not strict 'amount, foo, bar, ...etc'
         formatted: ''
       }, 
 
