@@ -8,6 +8,11 @@ export default {
       file: 'dist/index.min.js',
       format: 'es',
     },
+    {
+      file: 'dist/demo.min.js',
+      format: 'umd',
+      name: 'vueCurrencyDirective'
+    },
   ],
 
   plugins: [
