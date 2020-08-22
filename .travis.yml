@@ -1,10 +1,9 @@
 language: node_js
 node_js:
-  - node
+  - "stable"
 
 jobs:
   include
-    if: branch = adding-travis
     - stage: build
       script: yarn build
     - stage: test
