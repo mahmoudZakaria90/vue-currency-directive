@@ -2,7 +2,7 @@
 Simple, quick custom directive for handling currency format inside text inputs.
 
 Compatible with Vue 2.x
-- <a href="https://jsfiddle.net/Zak90/sxd9j3uL/19/">Demo/Playground</a>
+- <a href="https://jsfiddle.net/Zak90/sxd9j3uL/33/" target="_blank">Demo/Playground</a>
 - <a href="#installation">Installation</a>
 - <a href="#global-registration">Global registration</a>
 - <a href="#local-registration">Local registration</a>
@@ -16,7 +16,7 @@ Compatible with Vue 2.x
 - You mainly get 2 outputs: one for **the unformatted/original** value and the other for **the formatted value**.
 
 ## In DOM/Single-file-component
-`<input v-currency:<currency>[<locale>]="<bindingExpression.value>">`
+`<input v-currency:<currency>[<locale>]="<bindingExpression>">`
 
 For example:
 ```
@@ -86,7 +86,7 @@ Passing no arguments will reflect to "USD" currency by default and for locale it
 //Output: $1,232.00
 ```
 
-Passing currency argument only.  
+Passing currency argument only without locale.  
 ```
 <input v-currency:EUR="amount.value"> // amount.value = 1232
 //Output: €1,232.00
