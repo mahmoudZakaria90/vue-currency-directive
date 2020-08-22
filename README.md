@@ -82,18 +82,18 @@ export default {
 ## Examples
 Passing no arguments will reflect to "USD" currency by default and for locale it will use the configured browser language.  
 ```
-<input v-currency="amount.value"> // amount.value = 1232
-//Output: $1,232.00
+<input v-currency="amount.value"> // amount.value = 3244
+//Output: $3,244.00
 ```
 
 Passing currency argument only without locale.  
 ```
-<input v-currency:EUR="amount.value"> // amount.value = 1232
-//Output: €1,232.00
+<input v-currency:EUR="amount.value"> // amount.value = 100234
+//Output: €100,234.00
 ```
 
 Passing with locale argument and different currency.  
 ```
-<input v-currency:EGP[ar-EG]="amount.value"> // amount.value = 1232
-//Output: ١٬٢٣٢٫٠٠ ج.م.‏ 
+<input v-currency:EGP[ar-EG]="amount.value"> // amount.value = 554342
+//Output: ٥٥٤٬٣٤٢٫٠٠ ج.م.‏ 
 ```
