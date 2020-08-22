@@ -1,8 +1,8 @@
 {
   "name": "vue-currency-directive",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "description": "",
-  "main": "dist/index.min.js",
+  "main": "main.js",
   "homepage": "https://github.com/mahmoudZakaria90/vue-currency-directive",
   "repository": "https://github.com/mahmoudZakaria90/vue-currency-directive",
   "keywords": [
