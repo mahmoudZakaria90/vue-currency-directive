@@ -29,9 +29,7 @@
     "rollup": "^2.26.4",
     "rollup-plugin-cleaner": "^1.0.0",
     "rollup-plugin-terser": "^7.0.0",
-    "vue": "^2.6.12"
-  },
-  "dependencies": {
+    "vue": "^2.6.12",
     "vue-template-compiler": "^2.6.12"
   }
 }
