@@ -34,5 +34,10 @@
     "vue": "^2.6.12",
     "vue-template-compiler": "^2.6.12"
   },
+  "release-it": {
+    "github": {
+      "release": true
+    }
+  },
   "private": false
 }
