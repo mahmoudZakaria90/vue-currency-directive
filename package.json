@@ -1,6 +1,6 @@
 {
   "name": "vue-currency-directive",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "description": "Simple, quick custom directive for handling currency format inside text inputs.",
   "main": "dist/index.min.js",
   "homepage": "https://github.com/mahmoudZakaria90/vue-currency-directive",
@@ -27,21 +27,11 @@
     "eslint": "^7.7.0",
     "eslint-plugin-vue": "^6.2.2",
     "jest": "^26.4.2",
-    "release-it": "^13.6.9",
     "rollup": "^2.26.4",
     "rollup-plugin-cleaner": "^1.0.0",
     "rollup-plugin-terser": "^7.0.0",
     "vue": "^2.6.12",
     "vue-template-compiler": "^2.6.12"
-  },
-  "release-it": {
-    "github": {
-      "release": true
-    },
-    "npm": {
-      "release": true,
-      "tag": "next"
-    }
   },
   "private": false
 }
