@@ -37,6 +37,10 @@
   "release-it": {
     "github": {
       "release": true
+    },
+    "npm": {
+      "release": true,
+      "tag": "next"
     }
   },
   "private": false
