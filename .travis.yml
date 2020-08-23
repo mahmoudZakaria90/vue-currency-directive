@@ -18,6 +18,7 @@ jobs:
       cleanup: true
       on:
         branch: release
+        tags: true
         repo: mahmoudZakaria90/vue-currency-directive
   - stage: github-release
     deploy:
@@ -27,5 +28,6 @@ jobs:
       cleanup: true
       on:
         branch: release
+        tags: true
         repo: mahmoudZakaria90/vue-currency-directive
 cache: yarn
