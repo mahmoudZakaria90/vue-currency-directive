@@ -2,7 +2,6 @@ language: node_js
 node_js:
 - stable
 dist: xenial
-os: linux
 jobs:
   include:
   - stage: build
