@@ -31,5 +31,6 @@ jobs:
         repo: mahmoudZakaria90/vue-currency-directive
     after_deploy:
       - git checkout master
+      - git pull
       - git merge release
 cache: yarn
