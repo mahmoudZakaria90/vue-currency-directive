@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - "stable"
+jobs:
+  include:
+    - stage: build
+      script: yarn build
+    - stage: test
+      script: yarn test
+
+cache: yarn
