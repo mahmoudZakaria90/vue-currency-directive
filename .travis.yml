@@ -32,5 +32,5 @@ jobs:
     after_deploy:
       - git checkout master
       - git pull
-      - git merge release
+      - git merge -
 cache: yarn
