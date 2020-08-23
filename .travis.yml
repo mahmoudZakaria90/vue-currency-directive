@@ -9,12 +9,21 @@ jobs:
     script: yarn build
   - stage: test
     script: yarn test
-  - stage: deploy
+  - stage: deploy-npm
     deploy:
       provider: npm
       email: m.zakria90@gmail.com
       api_token:
         secure: n94UlOHPowBSp/5Yg0wH3rEm1HVr1nRFo04L1kEu1Xtm2+52uUrMsYRjUZBuZrbj6AdnciDLsTkisS+y7YDAVPChrOTjn2DbKgrUq650S3fcpRA7ZNvpgq9kID4Pf9G6dV5zDXOW5uuh1KPi0ZpBF3T7jzpHRUWfRM3KC1O0AV1BezuASUfNimfvecmdTCX8qyd1190knRR4RD25Q4yYEq2LUk+j74D0IpY4G/g5/E73F3kWZmgt254o8cKWwNOKl0RLsUtjHqoOHUX07UpDXFl7qv9BcEfpAIFSNf+2muM0RVcFUX8wXaxYxnuXAx6hpvVCfkomnaysx3ml4fnwYHl4zjfJ4XSSR8PrJJAVcmU5rFLMkavZRMO1GI9PHfgd1IG37jUqvF1JpM2EF475HNjIR3rJRDwiAksbtThjQcbCUQ0E/MqCUNlT1C6lTN7VDtm+3Wbv68pGK240L/jgCRwgSr/C18+p/8U58B8TIdE2bJAyIGZ6Ihhq2+qw1T/pIU24WSAGNs8n+5KsD40IjqWkRr07khjcPFWIeZC/P9EtP3UvENhVukKxuvHRoV+GQB2s8QJeVB8Z+Wo2UvmpMTg2zLtMjnUOYrB7ZW6E8P6oAJjJWyNwWKHEt5ReSiFX7CZh/hoVlKVpYvXHODibsZ5bkEpYsMYb34BWgcXx+HA=
+      cleanup: true
+      on:
+        branch: master
+        repo: mahmoudZakaria90/vue-currency-directive
+  - stage: github-release
+    deploy:
+      provider: releases
+      api_token:
+        secure: Z8JAMpp4dDYE0Ycbo99Jd4JuqLK3aPN5AeudRRrmnGV7UMK54PdKCBN8GnY3ixeiveJwOKoDCK89TwkutLu6KBtMgZteyrsCxYfyHPDqMep7jEou6dlDNcf87oU46S3jZGxdtIz44RpMtEzBcr85fyXtBguFM53Kxbh9/h4mWK3Ce6rWhNJCGhIo5X4+hcXvROLP1qY2jn4NqJmlZ4pjIEnO11cpFf59Ej1U/SN8YAijnBfFskJc66N0ibr9VvJ3g5BbhfilGPNvaE0boEZyISZgCrzH7PFnAUbD4NZsSW6Z7fEn/aVU+45qjJK5+U3MKQbsV4v7YShh2pqCOUznmazrz/hbB9vEZOlRq0qkjMAOvW22MEkFP3mjSvKclkTsWCocqlE22Rv4JlmosvMO04Ycyg/7VmwfxpdO/n4ew7/FQ+SPnxhI28WktQg9IqoVHq6PU2DP1QGbtkGB58gNfcOEeEb3JMd3zWHjYeA85O6Nn6vCy5AQqLF0IkPWJrLbr2Y8CRnibTf2IrAoQfEC/onudB2il4/bFngO7tja76FjW4d18pVCqmLL8w6wzBsCWWv9gOTt5kRLfIebhvoB9gOjceOakXvDOUz7pBsU4Dn0pyDif0n/+mzY4jy6JYISohSOkvTPGV7uP9ZWpPox83EnmsrfXTwUeUaR94l4wlU=
       cleanup: true
       on:
         branch: master
