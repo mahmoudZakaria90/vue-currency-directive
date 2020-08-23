@@ -18,6 +18,5 @@ jobs:
       cleanup: true
       on:
         branch: master
-        tags: true
         repo: mahmoudZakaria90/vue-currency-directive
 cache: yarn
