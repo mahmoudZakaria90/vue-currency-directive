@@ -2,7 +2,7 @@ import cleaner from 'rollup-plugin-cleaner';
 import { terser } from 'rollup-plugin-terser';
 
 export default {
-  input: __dirname + '/main.js',
+  input: __dirname + '/src/main.js',
   output: [
     {
       file: 'dist/index.min.js',

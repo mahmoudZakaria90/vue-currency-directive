@@ -7,5 +7,7 @@ jobs:
       script: yarn build
     - stage: test
       script: yarn test
+    - stage: release
+      script: yarn release
 
 cache: yarn
