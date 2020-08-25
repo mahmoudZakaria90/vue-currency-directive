@@ -1,6 +1,6 @@
 export default {
   bind(el, binding, vnode) {
-    const targetEl = el.tagName.toLowerCase() !== 'input' ? el.querySelector('input[type="text"]') : el;
+    const targetEl = el.tagName.toLowerCase() !== 'input' ? el.querySelector('.v-currency-input') || el.querySelector('input[type="text"]') || el.querySelector('input') : el;
     const character_pattern = new RegExp(/[a-zA-z,\W]/, "g");
     const [parentObj, valProp] = binding.expression.split('.');
     const mainData = vnode.context.$data[parentObj]
@@ -37,7 +37,7 @@ export default {
       "focus",
       e => e.target.value = Number(mainData[valProp]) === 0 ? '' : mainData[valProp]
     );
-    
+
     targetEl.addEventListener("input", e => {
       if (character_pattern.test(e.target.value)) {
         e.target.value = e.target.value.replace(character_pattern, "");
