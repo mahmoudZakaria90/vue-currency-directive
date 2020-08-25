@@ -3,9 +3,6 @@ node_js:
 - stable
 dist: xenial
 os: linux
-branches:
-  only:
-    release
 jobs:
   include:
   - stage: build
