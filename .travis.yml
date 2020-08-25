@@ -5,7 +5,8 @@ dist: xenial
 os: linux
 branches:
   only:
-    release
+    - master
+    - release
 jobs:
   include:
   - stage: build
