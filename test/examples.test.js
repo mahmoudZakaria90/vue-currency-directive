@@ -57,30 +57,32 @@ describe('Test directive', () => {
         expect(input.element.value).toBe(expectedVal);
     })
 
-    // it('Output with a "EUR" currency and french locale when currency:EUR[fr-FR] arg is passed', () => {
-    //     const amountVal = 43434;
-    //     const expectedVal = '43 434,00 €';
-    //     const Component = {
-    //         template: `<input v-currency:EUR[fr-FR]="amount.value">`,
-    //         directives: {
-    //             currency: vueCurrencyDirective
-    //         },
-    //     }
-    //     const wrapper = mount(Component, {
-    //         data() {
-    //             return {
-    //                 amount: {
-    //                     value: '',
-    //                     formatted: ''
-    //                 }
-    //             }
-    //         },
-    //     })
-    //     const input = wrapper.find('input');
-    //     input.trigger('focus');
-    //     input.trigger('input');
-    //     input.setValue(amountVal);
-    //     input.trigger('blur');
-    //     expect(input.element.value).toEqual(expectedVal);
-    // })
+    it('Output with a "EUR" currency and french locale when currency:EUR[fr-FR] arg is passed', () => {
+        const replacePattern = /\s/g;
+        const amountVal = 43434;
+        const expectedVal = '43 434,00 €'.replace(replacePattern, '');
+        const Component = {
+            template: `<input v-currency:EUR[fr-FR]="amount.value">`,
+            directives: {
+                currency: vueCurrencyDirective
+            },
+        }
+        const wrapper = mount(Component, {
+            data() {
+                return {
+                    amount: {
+                        value: '',
+                        formatted: ''
+                    }
+                }
+            },
+        })
+        const input = wrapper.find('input');
+        input.trigger('focus');
+        input.trigger('input');
+        input.setValue(amountVal);
+        input.trigger('blur');
+        const receivedVal = input.element.value.replace(replacePattern, '')
+        expect(receivedVal).toEqual(expectedVal);
+    })
 })
