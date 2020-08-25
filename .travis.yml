@@ -3,13 +3,16 @@ node_js:
 - stable
 dist: xenial
 os: linux
+branches:
+  only:
+    release
 jobs:
   include:
   - stage: build
     script: yarn build
   - stage: test
     script: yarn test
-  - stage: deploy-npm
+  - stage: npm-release
     deploy:
       provider: npm
       email: m.zakria90@gmail.com
