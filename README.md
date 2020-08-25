@@ -56,6 +56,17 @@ export default {
 ...
 <script>
 ```
+## With a Component/controlled input
+```
+const CurrencyInput = {
+  template: '<input />',
+}
+
+// In DOM/Single-file-component
+<CurrencyInput v-currency="amount.value">
+```
+**Note**: in case you are using a multiple or a group of different inputs with different types and you are not sure that the currency input is going to be indexed as the first item then you could pass a class name `.v-currency-input` other than that if it's going to be the only or the first input in the group then you don't have to.<br><br>
+
 ## Global registration
 ```
 import Vue from 'vue';

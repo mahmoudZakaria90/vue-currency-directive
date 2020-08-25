@@ -3,16 +3,13 @@ node_js:
 - stable
 dist: xenial
 os: linux
-branches:
-  only:
-    release
 jobs:
   include:
   - stage: build
     script: yarn build
   - stage: test
     script: yarn test
-  - stage: deploy-npm
+  - stage: npm-release
     deploy:
       provider: npm
       email: m.zakria90@gmail.com
@@ -22,18 +19,4 @@ jobs:
       on:
         branch: release
         repo: mahmoudZakaria90/vue-currency-directive
-  - stage: github-release
-    deploy:
-      provider: releases
-      api_key:
-        secure: Z8JAMpp4dDYE0Ycbo99Jd4JuqLK3aPN5AeudRRrmnGV7UMK54PdKCBN8GnY3ixeiveJwOKoDCK89TwkutLu6KBtMgZteyrsCxYfyHPDqMep7jEou6dlDNcf87oU46S3jZGxdtIz44RpMtEzBcr85fyXtBguFM53Kxbh9/h4mWK3Ce6rWhNJCGhIo5X4+hcXvROLP1qY2jn4NqJmlZ4pjIEnO11cpFf59Ej1U/SN8YAijnBfFskJc66N0ibr9VvJ3g5BbhfilGPNvaE0boEZyISZgCrzH7PFnAUbD4NZsSW6Z7fEn/aVU+45qjJK5+U3MKQbsV4v7YShh2pqCOUznmazrz/hbB9vEZOlRq0qkjMAOvW22MEkFP3mjSvKclkTsWCocqlE22Rv4JlmosvMO04Ycyg/7VmwfxpdO/n4ew7/FQ+SPnxhI28WktQg9IqoVHq6PU2DP1QGbtkGB58gNfcOEeEb3JMd3zWHjYeA85O6Nn6vCy5AQqLF0IkPWJrLbr2Y8CRnibTf2IrAoQfEC/onudB2il4/bFngO7tja76FjW4d18pVCqmLL8w6wzBsCWWv9gOTt5kRLfIebhvoB9gOjceOakXvDOUz7pBsU4Dn0pyDif0n/+mzY4jy6JYISohSOkvTPGV7uP9ZWpPox83EnmsrfXTwUeUaR94l4wlU=
-      cleanup: true
-      on:
-        branch: release
-        tags: true
-        repo: mahmoudZakaria90/vue-currency-directive
-    after_deploy:
-      - git checkout master
-      - git pull
-      - git merge release
 cache: yarn
