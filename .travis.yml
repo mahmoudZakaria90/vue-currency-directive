@@ -7,10 +7,8 @@ jobs:
   include:
   - stage: build
     script: yarn build
-    if: branch = release
   - stage: test
     script: yarn test
-    if: branch = release
   - stage: npm-release
     deploy:
       provider: npm
