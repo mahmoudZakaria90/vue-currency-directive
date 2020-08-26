@@ -7,10 +7,12 @@ Simple, quick custom directive for handling currency format inside text inputs.
 [![License](https://img.shields.io/npm/l/vue-currency-directive.svg?)](https://www.npmjs.com/package/vue-currency-directive)
 
 Compatible with Vue 2.x
-- <a href="https://jsfiddle.net/Zak90/sxd9j3uL/39/" target="_blank">Demo/Playground</a>
+- <a href="https://jsfiddle.net/Zak90/sxd9j3uL/40/" target="_blank">Demo/Playground</a>
 - <a href="#installation">Installation</a>
+- <a href="#usage">Usage</a>
 - <a href="#global-registration">Global registration</a>
 - <a href="#local-registration">Local registration</a>
+- <a href="#dynamic-arguments">Dynamic arguments</a>
 - <a href="#examples">Examples</a>
 
 # Installation
@@ -38,23 +40,23 @@ export default {
     return {
       amount: { // naming is not strict 'amount, foo, bar, ...etc'
         value: '', 
-        formatted: ''
+        formatted: '' // Better to be empty
       }, 
 
       foo: {
         value: '',
-        formatted: ''
+        formatted: '' // Better to be empty
       },
 
       bar: {
         value: '',
-        formatted: ''
+        formatted: '' // Better to be empty
       }
     }
   }
 }
 ...
-<script>
+</script>
 ```
 ## With a Component/controlled input
 ```
@@ -84,7 +86,7 @@ export default {
   data(){
     amount: {
       value: '', 
-      formatted: ''
+      formatted: '' // Better to be empty
     }, 
   },
   directives: {
@@ -93,10 +95,50 @@ export default {
   ...
 }
 </script>
+
+```
+# Dynamic arguments
+In case you want to handle arguments in more dynamic way based on data changes and not sticking with a specific `currency` and `locale`, just add 2 more state inputs `currency` and `locale` inside the parent object e.g. `amount` in our case and remove any directive args e.g.`:EUR[de-DE]` from the component and vice-versa:
+```
+<template>
+  <input v-currency="amount.value" />
+
+  //Currency selector
+  <select v-model="amount.currency">
+    <option value="USD">USD</option>
+    <option value="EUR">EUR</option>
+    <option value="GBP">GBP</option>
+  </select>
+
+  //Locale selector
+  <select v-model="amount.locale">
+    <option value="en-US">US</option>
+    <option value="de-DE">DE</option>
+    <option value="en-GB">GB</option>
+  </select>
+  
+</template>
+
+<script>
+...
+export default {
+  data(){
+    return {
+      amount: { // naming is not strict 'amount, foo, bar, ...etc'
+        value: '', 
+        currency: '',
+        locale: '',
+        formatted: '' // Better to be empty
+      }
+    }
+  }
+}
+...
+</script>
 ```
 
 ## Examples
-Passing no arguments will reflect to "USD" currency by default and for locale it will use the configured browser language.  
+Passing no arguments will reflect to `USD` currency by default and for locale it will use the configured browser language.  
 ```
 <input v-currency="amount.value"> // amount.value = 3244
 //Output: $3,244.00
