@@ -1,9 +1,11 @@
+import handleUpdate from './handleUpdate';
+
 export default {
   bind(el, binding, vnode) {
     const targetEl = el.tagName.toLowerCase() !== 'input' ? el.querySelector('.v-currency-input') || el.querySelector('input[type="text"]') || el.querySelector('input') : el;
     const character_pattern = new RegExp(/[a-zA-z,\W]/, "g");
     const [parentObj, valProp] = binding.expression.split('.');
-    const mainData = vnode.context.$data[parentObj]
+    const mainData = vnode.context.$data[parentObj];
 
     const currencyCB = target => {
       if (character_pattern.test(target.value)) {
@@ -16,14 +18,14 @@ export default {
       let locale;
 
       if (target.value && targetValToNum !== 0) {
-        if (binding.arg) {
-          if (binding.arg.length <= 3) {
-            currency = mainData['currency'] || binding.arg
+        if (target.arg) {
+          if (target.arg.length <= 3) {
+            currency = target.arg
           } else {
-            let split = binding.arg.split('[')
+            const split = target.arg.split('[')
             currency = split[0];
             locale = split[1];
-            locale = locale && locale.replace(']', '')
+            locale = locale.replace(']', '')
           }
         } else {
           currency = mainData['currency'];
@@ -58,5 +60,20 @@ export default {
       const finalAmount = unformattedAmount === 0 ? '' : unformattedAmount
       mainData[valProp] = finalAmount;
     });
+  },
+  update(el, binding, vnode) {
+    const targetEl = el.tagName.toLowerCase() !== 'input' ? el.querySelector('.v-currency-input') || el.querySelector('input[type="text"]') || el.querySelector('input') : el;
+    const [parentObj, valProp] = binding.expression.split('.');
+    const mainData = vnode.context.$data[parentObj];
+
+    if (targetEl.value === mainData['formatted']) {
+      targetEl.value = handleUpdate(mainData, valProp)
+    }
+    mainData['formatted'] = handleUpdate(mainData, valProp);
+
+    targetEl.addEventListener('blur', e => {
+      e.target.value = handleUpdate(mainData, valProp);
+      targetEl.removeEventListener('blur', () => { return })
+    })
   }
 };
