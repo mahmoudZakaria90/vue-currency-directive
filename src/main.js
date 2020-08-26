@@ -18,11 +18,11 @@ export default {
       let locale;
 
       if (target.value && targetValToNum !== 0) {
-        if (target.arg) {
-          if (target.arg.length <= 3) {
-            currency = target.arg
+        if (binding.arg) {
+          if (binding.arg.length <= 3) {
+            currency = binding.arg
           } else {
-            const split = target.arg.split('[')
+            const split = binding.arg.split('[')
             currency = split[0];
             locale = split[1];
             locale = locale.replace(']', '')
