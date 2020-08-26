@@ -66,14 +66,11 @@ export default {
     const [parentObj, valProp] = binding.expression.split('.');
     const mainData = vnode.context.$data[parentObj];
 
-    if (targetEl.value === mainData['formatted']) {
-      targetEl.value = handleUpdate(mainData, valProp)
+    if (mainData['currency'] || mainData['locale']) {
+      if (targetEl.value === mainData['formatted']) {
+        targetEl.value = handleUpdate(mainData, valProp)
+      }
+      mainData['formatted'] = handleUpdate(mainData, valProp);
     }
-    mainData['formatted'] = handleUpdate(mainData, valProp);
-
-    targetEl.addEventListener('blur', e => {
-      e.target.value = handleUpdate(mainData, valProp);
-      targetEl.removeEventListener('blur', () => { return })
-    })
   }
 };
