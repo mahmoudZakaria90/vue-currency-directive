@@ -98,7 +98,7 @@ export default {
 
 ```
 # Dynamic arguments
-In case you want to handle arguments in more dynamic way based on data changes and not sticking with a specific `currency` and `locale`, just add 2 more state inputs `currency` and `locale` inside the parent object e.g. `amount` in our case and remove any directive args e.g.`:EUR[de-DE]` from the component:
+In case you want to handle arguments in more dynamic way based on data changes and not sticking with a specific `currency` and `locale`, just add 2 more state inputs `currency` and `locale` inside the parent object e.g. `amount` in our case and remove any directive args e.g.`:EUR[de-DE]` from the component and vice-versa:
 ```
 <template>
   <input v-currency="amount.value" />
