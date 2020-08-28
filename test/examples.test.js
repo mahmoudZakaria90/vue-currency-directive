@@ -87,8 +87,8 @@ describe('Test directive', () => {
     })
 })
 
-describe('Dynamic arguments', () => {
-    it('Outputs with a dynamic currency/locale based on data()', () => {
+describe.only('Dynamic arguments', () => {
+    it('Outputs based on a dynamic currency/locale based on data()', () => {
         const template = `
                            <div>
                                 <input v-currency="amount.value">
@@ -107,7 +107,7 @@ describe('Dynamic arguments', () => {
                                 </select>
                            </div>
                          `
-        const amountVal = 13232;
+        const value = 13232;
         const expectedVal = '£13,232.00';
         const Component = {
             template,
@@ -119,27 +119,24 @@ describe('Dynamic arguments', () => {
             data() {
                 return {
                     amount: {
-                        value: '',
+                        value,
                         currency: 'USD',
-                        locale: 'en-US',
+                        locale: 'de-DE',
                         formatted: ''
                     }
                 }
             },
         })
+
         const input = wrapper.find('input');
-        const currencySelect = wrapper.find('#currency-select');
-        const localeSelect = wrapper.find('#locale-select');
+        const currencySelect = wrapper.find('#currency-select').findAll('option');
+        const localeSelect = wrapper.find('#locale-select').findAll('option');
+        console.log(currencySelect.at(2).element.value);
+        console.log(localeSelect.at(2).element.value);
+        currencySelect.at(2).setSelected();
+        localeSelect.at(2).setSelected();
 
-        input.setValue(amountVal);
-
-        currencySelect.trigger('focus');
-        currencySelect.trigger('change');
-        currencySelect.setValue('GBP');
-
-        localeSelect.trigger('focus');
-        localeSelect.trigger('change');
-        localeSelect.setValue('en-GB');
+        console.log(input.element.value);
 
         expect(input.element.value).toBe(expectedVal);
     })
