@@ -3,9 +3,9 @@ import vueCurrencyDirective from '../dist/index.min';
 
 
 describe('Test directive', () => {
-    it('Outputs with a "USD" currency by default and for locale configured browser language in case of no arguments passed.', () => {
+    it('Outputs without currency by default in case of no arguments passed and for locale configured browser language.', () => {
         const amountVal = 3244;
-        const expectedVal = '$3,244.00';
+        const expectedVal = '3,244';
         const Component = {
             template: `<input v-currency="amount.value">`,
             directives: {
