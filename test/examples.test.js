@@ -87,8 +87,8 @@ describe('Test directive', () => {
     })
 })
 
-describe.only('Dynamic arguments', () => {
-    it('Outputs based on a dynamic currency/locale based on data()', () => {
+describe('Dynamic arguments', () => {
+    it('Outputs based on a dynamic currency/locale based on data()', async () => {
         const template = `
                            <div>
                                 <input v-currency="amount.value">
@@ -131,12 +131,9 @@ describe.only('Dynamic arguments', () => {
         const input = wrapper.find('input');
         const currencySelect = wrapper.find('#currency-select').findAll('option');
         const localeSelect = wrapper.find('#locale-select').findAll('option');
-        console.log(currencySelect.at(2).element.value);
-        console.log(localeSelect.at(2).element.value);
-        currencySelect.at(2).setSelected();
-        localeSelect.at(2).setSelected();
 
-        console.log(input.element.value);
+        await currencySelect.at(2).setSelected();
+        await localeSelect.at(2).setSelected();
 
         expect(input.element.value).toBe(expectedVal);
     })
