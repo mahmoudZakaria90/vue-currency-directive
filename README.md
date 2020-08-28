@@ -7,7 +7,7 @@ Simple, quick custom directive for handling currency format inside text inputs.
 [![License](https://img.shields.io/npm/l/vue-currency-directive.svg?)](https://www.npmjs.com/package/vue-currency-directive)
 
 Compatible with Vue 2.x
-- <a href="https://jsfiddle.net/Zak90/sxd9j3uL/40/" target="_blank">Demo/Playground</a>
+- <a href="https://codepen.io/Mahmoud-Zakaria/pen/YzqVBXE" target="_blank">Demo/Playground</a>
 - <a href="#installation">Installation</a>
 - <a href="#usage">Usage</a>
 - <a href="#global-registration">Global registration</a>
