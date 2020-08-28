@@ -7,7 +7,7 @@ Simple, quick custom directive for handling currency format inside text inputs.
 [![License](https://img.shields.io/npm/l/vue-currency-directive.svg?)](https://www.npmjs.com/package/vue-currency-directive)
 
 Compatible with Vue 2.x
-- <a href="https://jsfiddle.net/Zak90/sxd9j3uL/40/" target="_blank">Demo/Playground</a>
+- <a href="https://codepen.io/Mahmoud-Zakaria/pen/YzqVBXE" target="_blank">Demo/Playground</a>
 - <a href="#installation">Installation</a>
 - <a href="#usage">Usage</a>
 - <a href="#global-registration">Global registration</a>
@@ -21,6 +21,8 @@ Compatible with Vue 2.x
 # Usage
 - Register in your `data()` a main state object e.g. `amount` and inside it 2 main properties `value` and `formatted`.<br />
 - You mainly get 2 outputs: one for **the unformatted/original** value and the other for **the formatted value**.
+- Valid values for currency `USD`, `EUR`, `GBP`, `EGP`, `SAR`, for more [Currency Codes (ISO 4217 Standard)](https://www.techonthenet.com/js/currency_codes.php).
+- Valid values for locale `en-US`, `de-DE`, `fr-FR`, `ar-EG`, `ar-SA`, for more [List of locales](https://www.w3schools.com/JSREF/jsref_tolocalestring_number.asp).
 
 ## In DOM/Single-file-component
 `<input v-currency:<currency?>[<locale?>]="<bindingExpression>">`
