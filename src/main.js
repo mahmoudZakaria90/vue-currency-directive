@@ -32,8 +32,8 @@ export default {
           locale = mainData['locale'];
         }
         return targetValToNum.toLocaleString(locale || navigator.language, {
-          style: "currency",
-          currency: currency || 'USD'
+          style: currency ? "currency" : undefined,
+          currency: currency ? currency : undefined
         });
       }
       return '';
