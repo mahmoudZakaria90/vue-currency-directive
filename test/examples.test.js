@@ -57,12 +57,12 @@ describe('Test directive', () => {
         expect(input.element.value).toBe(expectedVal);
     })
 
-    it('Outputs with a "EUR" currency and french locale when currency:EUR[fr-FR] arg is passed', () => {
+    it('Outputs with a "EUR" currency and french locale when currency:EUR|[fr-FR] arg is passed', () => {
         const replacePattern = /\s/g;
         const amountVal = 43434;
-        const expectedVal = '43 434,00 €'.replace(replacePattern, '');
+        const expectedVal = '43 434 €'.replace(replacePattern, '');
         const Component = {
-            template: `<input v-currency:EUR[fr-FR]="amount.value">`,
+            template: `<input v-currency:EUR|[0,0,(fr-FR)]="amount.value">`,
             directives: {
                 currency: vueCurrencyDirective
             },
