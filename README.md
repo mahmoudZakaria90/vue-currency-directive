@@ -25,7 +25,12 @@ Compatible with Vue 2.x
 - Valid values for locale `en-US`, `de-DE`, `fr-FR`, `ar-EG`, `ar-SA`, for more [List of locales](https://www.w3schools.com/JSREF/jsref_tolocalestring_number.asp).
 
 ## In DOM/Single-file-component
-`<input v-currency:<currency?>[<locale?>]="<bindingExpression>">`
+`<input v-currency:<currency?>|[<minimumFractionDigits?>,<maximumFractionDigits?> ,<locale?>]="<bindingExpression>">`
+```
+v-currency="amount.value"
+v-currency:EUR="amount.value"
+v-currency:EUR|[1,2,(en-GB)]="amount.value"
+```
 
 For example:
 ```
@@ -154,6 +159,6 @@ Passing currency argument only without locale.
 
 Passing with locale argument and different currency.  
 ```
-<input v-currency:EGP[ar-EG]="amount.value"> // amount.value = 554342
+<input v-currency:EGP|[0,0,(ar-EG)]="amount.value"> // amount.value = 554342
 //Output: ٥٥٤٬٣٤٢٫٠٠ ج.م.‏ 
 ```
