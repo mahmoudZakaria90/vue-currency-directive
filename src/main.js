@@ -36,9 +36,9 @@ export default {
           maximumFractionDigits = mainData['maximumFractionDigits'];
         }
 
-        return targetValToNum.toLocaleString(locale || navigator.language, {
-          style: currency ? "currency" : undefined,
-          currency: currency ? currency : undefined,
+       return targetValToNum.toLocaleString(locale || 'en-US' || navigator.language, {
+          style: "currency",
+          currency: currency ? currency : 'USD',
           minimumFractionDigits,
           maximumFractionDigits,
         });
